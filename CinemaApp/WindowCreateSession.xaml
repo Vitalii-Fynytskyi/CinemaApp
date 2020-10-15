@@ -1,0 +1,41 @@
+﻿<Window x:Class="CinemaApp.WindowCreateSession"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaApp"
+        mc:Ignorable="d"
+        Title="Новий сеанс" Width="300" Height="300">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Фільм"/>
+            <ComboBox x:Name="comboBoxMovieNames" Margin="10,0,0,0" DisplayMemberPath="Title" SelectedValuePath="Title" SelectionChanged="comboBoxMovieNames_SelectionChanged"/>
+            <Label x:Name="LabelMovieDuration" Content="Тривалість: " Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Номер залу"/>
+            <ComboBox x:Name="comboBoxAuditoriums" Margin="10,0,0,0" DisplayMemberPath="InternalNumber" SelectedValuePath="InternalNumber" SelectionChanged="comboBoxAuditoriums_SelectionChanged"/>
+            <Label x:Name="LabelCountPlaces" Content="Кількість місць: " Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Дата початку"/>
+            <TextBox x:Name="textBoxStartDate" Margin="10,0,0,0" Width="120"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Дата кінця"/>
+            <TextBox x:Name="textBoxEndDate" Margin="10,0,0,0" Width="120"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Ціна квитка"/>
+            <TextBox x:Name="textBoxTicketPrice" Margin="10,0,0,0" Width="120"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Тип сеансу"/>
+            <ComboBox x:Name="comboBoxSessionType" Margin="10,0,0,0">
+                <ComboBoxItem>2D</ComboBoxItem>
+                <ComboBoxItem>3D</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <Button x:Name="buttonCreateNewSession" Content="Створити сеанс" HorizontalAlignment="Center" Margin="0,20,0,0" Click="buttonCreateNewSession_Click"/>
+    </StackPanel>
+</Window>
